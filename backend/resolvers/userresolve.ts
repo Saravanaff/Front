@@ -5,7 +5,7 @@ import { UserValuesType } from "../types/user_valuestypes";
 import {Users} from '../tables/users';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import * as dotenv from 'dotenv';
+import dotenv from 'dotenv';
 dotenv.config();
 import {
   CreateUserInput,
@@ -103,10 +103,9 @@ async Sign(@Arg("input") input: UserSign): Promise<UsersSign> {
         const valid = await bcrypt.compare(password, user.password);
 
         if (valid) {
-          const secret_key='3926326212e7f66f0692532a61a544b46d15eebb98c1ad44ab2af8ef2ac322de07685a2fc98c4abdd2bd329fdb59b28ae7f0f65a1a75915655c39298ec0716d9';
             const token = jwt.sign(
               { name: user.name, email: user.email },
-              secret_key,  
+              process.env.JWT_SECRET,  
               { expiresIn: "1h" } 
           );
             console.log(token);

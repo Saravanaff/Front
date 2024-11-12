@@ -4,6 +4,8 @@ import { buildSchema } from 'type-graphql';
 import { CompanyResolver } from './resolvers/companyresolve';
 import { UserResolver } from './resolvers/userresolve';
 import { sequelize } from './database';
+import dotenv from 'dotenv';
+dotenv.config();
 
 async function bootstrap() {
     try {
@@ -19,7 +21,7 @@ async function bootstrap() {
         console.error('Error syncing the database:', err);
     });
 
-        server.listen({ port: 5500 }).then(({ url }) => {
+        server.listen({ port: process.env.PORT }).then(({ url }) => {
             console.log(`Server is running on ${url}`);
         });
     } catch (err) {
