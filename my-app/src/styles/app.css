@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin:3vh;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body{
+    margin:4vh;
+  }
+  #company{
+    width:20vw;
+    padding:2vh;
+    outline:grey;
+    border:1px solid grey;
+    border-radius: 4px;
+  }
+  #form1{
+    margin-top: 8vh;
+  }
+  option{
+    font-family: Arial, Helvetica, sans-serif;
+    padding:50px;
+  }
+h1{
+    text-align: center;
+}
+.main{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:1px solid rgba(0,0,0,.3);
+    box-shadow: 2px 2px 4px grey;
+    padding:5vh;
+    border-radius: 5vh;
+}
+.sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ul{
+  display:flex;
+  justify-content: space-between;
+  width:80vw
+}
+.vel{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.in{
+  width: 20rem;
+}
