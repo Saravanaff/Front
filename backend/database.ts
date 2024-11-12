@@ -16,6 +16,7 @@ export const sequelize = new Sequelize({
   models: [Company, User, UserValues, Users],
   logging: false,
 });
+console.log(process.env.DB_NAME);
 
 Company.hasMany(User, { foreignKey: 'company_id' });
 User.belongsTo(Company, { foreignKey: 'company_id' });
