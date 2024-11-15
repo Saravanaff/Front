@@ -19,7 +19,7 @@ export class CompanyResolver {
     const id=await Users.findOne({where:{name:nam}});
       const main_id=id.dataValues.id;
     console.log(input);
-    const newColumn: any[] = [column_name] || [];
+    const newColumn: any[] = column_name ? [column_name] : [];
 
     let company = await Company.findOne({ where: { id: company_id,main_id:main_id } });
 
